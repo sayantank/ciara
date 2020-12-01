@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { SubmitBtn } from "../Buttons";
 import { Divider } from "../Divider";
 import FancyTitle from "../FancyTitle";
 import StyledSection from "../StyledSection";
-//import axios from "axios";
+import axios from "axios";
 
 interface ContactFormProps {}
 
 type ContactInputs = {
-  fullname: string;
+  name: string;
   email: string;
   contact: string;
-  when: string;
-  find: string;
+  plan: string;
   message?: string;
 };
 
@@ -26,19 +25,41 @@ const ContactForm: React.FC<ContactFormProps> = ({}) => {
     }
     return true;
   };
+
+  const [submitText, setSubmitText] = useState("SUBMIT");
+  const [errorMsg, setErrorMsg] = useState(null);
+
   const onSubmit = async (data: ContactInputs) => {
-    // const res = await axios.post(
-    //   "https://sleepy-anchorage-19435.herokuapp.com/callback-requests",
-    //   {
-    //     fullname: data.fullname.trim(),
-    //     email: data.email.trim(),
-    //     contact: data.contact.trim(),
-    //     message: data.message.trim(),
-    //     when: data.when.trim(),
-    //     find: data.find.trim(),
-    //   }
-    // );
-    console.log(data);
+    // console.log(data);
+    axios
+      .post("http://128.199.77.189:8001/registrations", {
+        name: data.name.trim(),
+        email: data.email.trim(),
+        contact: data.contact.trim(),
+        plan: data.plan.trim(),
+        message: data.message.trim(),
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
+          setSubmitText("THANK YOU!");
+          setTimeout(() => {
+            setSubmitText("SUBMIT");
+          }, 3000);
+        } else {
+          setSubmitText("INVALID INPUT");
+          setTimeout(() => {
+            setSubmitText("SUBMIT");
+          }, 3000);
+        }
+      })
+      .catch((_) => {
+        //console.log(err);
+        setErrorMsg("Something went wrong. Please contact us");
+        setTimeout(() => {
+          setErrorMsg(null);
+        }, 3000);
+      });
   };
   return (
     <StyledSection>
@@ -50,12 +71,12 @@ const ContactForm: React.FC<ContactFormProps> = ({}) => {
             <Label>
               Full Name
               <Input
-                name="fullname"
+                name="name"
                 type="text"
                 ref={register({ required: "This field is required" })}
               />
-              <ErrorMsg msg={errors.fullname?.message}>
-                {errors.fullname?.message}
+              <ErrorMsg msg={errors.name?.message}>
+                {errors.name?.message}
               </ErrorMsg>
             </Label>
             <Label>
@@ -89,21 +110,11 @@ const ContactForm: React.FC<ContactFormProps> = ({}) => {
             </Label>
             <Label>
               When do you plan to buy?
-              <select name="when" ref={register}>
+              <select name="plan" ref={register}>
                 <option value="immediately">Immediately</option>
                 <option value="months_3_to_6">3-6 Months</option>
                 <option value="months_6_to_12">6-12 Months</option>
                 <option value="year_1">Word of mouth</option>
-                <option value="others">Others</option>
-              </select>
-            </Label>
-            <Label>
-              How did you find out about us?
-              <select name="find" ref={register}>
-                <option value="signage">Signage</option>
-                <option value="social">Social Media</option>
-                <option value="print">Print Media</option>
-                <option value="mouth">Word of mouth</option>
                 <option value="others">Others</option>
               </select>
             </Label>
@@ -113,7 +124,8 @@ const ContactForm: React.FC<ContactFormProps> = ({}) => {
               Your Message
               <TextArea form="contact-form" ref={register} name="message" />
             </Label>
-            <SubmitBtn type="submit">SUBMIT</SubmitBtn>
+            <SubmitBtn type="submit">{submitText}</SubmitBtn>
+            {errorMsg && <Label style={{ color: "red" }}>{errorMsg}</Label>}
           </div>
         </Form>
       </Container>
@@ -198,7 +210,7 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   border: solid 3px;

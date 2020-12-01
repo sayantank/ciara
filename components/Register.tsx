@@ -2,19 +2,17 @@ import React, { useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
-//import axios from "axios";
+import axios from "axios";
 import { SubmitBtn2 } from "./Buttons";
 
 interface RegisterProps {}
 
 type ContactInputs = {
-  fullname: string;
+  name: string;
   email: string;
   contact: string;
-  postcode: string;
-  when: string;
-  find: string;
-  size: string;
+  plan: string;
+  message: string;
 };
 
 const Register: React.FC<RegisterProps> = ({}) => {
@@ -42,20 +40,39 @@ const Register: React.FC<RegisterProps> = ({}) => {
     return true;
   };
 
+  const [submitText, setSubmitText] = useState("SUBMIT");
+  const [errorMsg, setErrorMsg] = useState(null);
+
   const onSubmit = async (data: ContactInputs) => {
-    // const res = await axios.post(
-    //   "https://sleepy-anchorage-19435.herokuapp.com/registrations",
-    //   {
-    //     fullname: data.fullname.trim(),
-    //     email: data.email.trim(),
-    //     contact: data.contact.trim(),
-    //     postcode: data.postcode.trim(),
-    //     when: data.when.trim(),
-    //     find: data.find.trim(),
-    //     size: data.size.trim(),
-    //   }
-    // );
-    console.log(data);
+    axios
+      .post("http://128.199.77.189:8001/registrations", {
+        name: data.name.trim(),
+        email: data.email.trim(),
+        contact: data.contact.trim(),
+        plan: data.plan.trim(),
+        message: data.message.trim(),
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
+          setSubmitText("THANK YOU!");
+          setTimeout(() => {
+            setSubmitText("SUBMIT");
+          }, 3000);
+        } else {
+          setSubmitText("INVALID INPUT");
+          setTimeout(() => {
+            setSubmitText("SUBMIT");
+          }, 3000);
+        }
+      })
+      .catch((_) => {
+        //console.log(err);
+        setErrorMsg("Something went wrong. Please contact us");
+        setTimeout(() => {
+          setErrorMsg(null);
+        }, 3000);
+      });
   };
 
   const { register, handleSubmit, errors } = useForm<ContactInputs>();
@@ -73,12 +90,12 @@ const Register: React.FC<RegisterProps> = ({}) => {
               <Label>
                 Full Name
                 <Input
-                  name="fullname"
+                  name="name"
                   type="text"
                   ref={register({ required: "This field is required" })}
                 />
-                <ErrorMsg msg={errors.fullname?.message}>
-                  {errors.fullname?.message}
+                <ErrorMsg msg={errors.name?.message}>
+                  {errors.name?.message}
                 </ErrorMsg>
               </Label>
               <Label>
@@ -110,20 +127,10 @@ const Register: React.FC<RegisterProps> = ({}) => {
                   {errors.contact?.message}
                 </ErrorMsg>
               </Label>
-              <Label>
-                Postal Code
-                <Input
-                  name="postcode"
-                  type="text"
-                  ref={register({ required: "This field is required" })}
-                />
-                <ErrorMsg msg={errors.postcode?.message}>
-                  {errors.postcode?.message}
-                </ErrorMsg>
-              </Label>
+
               <Label>
                 When do you plan on buying?
-                <select name="when" ref={register}>
+                <select name="plan" ref={register}>
                   <option value="immediately">Immediately</option>
                   <option value="months_3_6">3 to 6 Months</option>
                   <option value="months_6_12">6 to 12 Months</option>
@@ -131,34 +138,11 @@ const Register: React.FC<RegisterProps> = ({}) => {
                 </select>
               </Label>
               <Label>
-                What size block are you looking for?
-                <select name="size" ref={register}>
-                  <option value="less_than_400">Less than 400 m2</option>
-                  <option value="from_400_to_450">400-450 m2</option>
-                  <option value="from_450_to_500">450-500 m2</option>
-                  <option value="from_500_to_550">500-550 m2</option>
-                  <option value="from_550_to_600">550-600m2</option>
-                  <option value="over_600">Over 600 m2</option>
-                  <option value="house_and_land">House and Land</option>
-                </select>
+                Your Message
+                <TextArea form="contact-form" ref={register} name="message" />
               </Label>
-              <Label>
-                How did you find out about us?
-                <select name="find" ref={register}>
-                  <option value="builder_referral">Builder Referral</option>
-                  <option value="bus_signage">Bus Signage</option>
-                  <option value="domain_com_au">Domain.com.au</option>
-                  <option value="email_comm">Email Communication</option>
-                  <option value="facebook">Facebook</option>
-                  <option value="friend_family">Friends and Family</option>
-                  <option value="google">Google</option>
-                  <option value="newspaper">Newspaper</option>
-                  <option value="myland_com_au">Myland.com.au</option>
-                  <option value="realestate_com_au">Realestate.com.au</option>
-                  <option value="signage">Signage</option>
-                </select>
-              </Label>
-              <SubmitBtn2 type="submit">SUBMIT</SubmitBtn2>
+              <SubmitBtn2 type="submit">{submitText}</SubmitBtn2>
+              <Label style={{ color: "red" }}>{errorMsg}</Label>
             </Form>
           </Wrapper>
         </MainContainer>
@@ -327,6 +311,25 @@ const ErrorMsg = styled.p<{ msg: string }>`
   width: 100%;
   display: ${(props) =>
     props.msg === "" || props.msg === undefined ? "none" : "block"};
+`;
+
+const TextArea = styled.textarea`
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  border: solid 3px;
+  border-color: ${({ theme }) => theme.colors.gold};
+  color: ${({ theme }) => theme.colors.gold};
+  padding: 8px 14px;
+  margin: 8px 0px;
+  resize: none;
+  width: 100%;
+  height: 240px;
+  background-color: rgba(0, 41, 81, 1);
+
+  &:focus {
+    outline-width: 0;
+  }
 `;
 
 const NumberWrapper = styled.div`
