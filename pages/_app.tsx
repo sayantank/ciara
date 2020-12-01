@@ -1,0 +1,64 @@
+import type { AppProps /*, AppContext */ } from "next/app";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import Navbar from "../components/Navbar";
+import Head from "next/head";
+import "./_app.css";
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "Ellen-Luff";
+    src: url("/fonts/EllenLuff-LarkenMedium.otf");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Ellen-Luff";
+    src: url("/fonts/EllenLuff-LarkenRegular.otf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+`;
+
+const theme = {
+  colors: {
+    blue: "#002951",
+    gold: "#d3c48f",
+    darkgold: "#c8ba87",
+    gray: "#f5f5f5",
+  },
+};
+
+export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const [curr, setCurr] = useState("");
+  useEffect(() => {
+    // console.log(router.pathname);
+    setCurr(router.pathname);
+  }, [router.pathname]);
+
+  return (
+    <div>
+      <Head>
+        <title>Ciara Heights</title>
+      </Head>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <Navbar curr={curr} />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </div>
+  );
+}
