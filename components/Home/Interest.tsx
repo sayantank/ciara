@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { GoldenButton } from "../Buttons";
 import FancyText from "../FancyText";
-import FancyTitle from "../FancyTitle";
-import ResponsiveContainer from "../ResponsiveContainer";
+import FancyTitle, { SubHeader } from "../FancyTitle";
 import StyledSection from "../StyledSection";
 
 interface InterestProps {}
@@ -11,9 +10,12 @@ interface InterestProps {}
 const Interest: React.FC<InterestProps> = ({}) => {
   return (
     <StyledSection>
-      <ResponsiveContainer>
+      <Container>
         <ContentWrapper2>
           <FancyTitle>EXPRESS YOUR INTEREST</FancyTitle>
+          <SubHeader style={{ marginTop: "8px" }}>
+            PLUNGE FOR THE IDEAL LIFE
+          </SubHeader>
         </ContentWrapper2>
         <ContentWrapper>
           <FancyText>
@@ -24,14 +26,24 @@ const Interest: React.FC<InterestProps> = ({}) => {
             <GoldenButton>REGISTER NOW</GoldenButton>
           </ButtonWrapper>
         </ContentWrapper>
-      </ResponsiveContainer>
+      </Container>
     </StyledSection>
   );
 };
 
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
 const ContentWrapper = styled.div`
   width: 50%;
-  min-height: 360px;
+  min-height: 240px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,18 +55,29 @@ const ContentWrapper = styled.div`
     justify-content: flex-start;
     min-height: auto;
     padding-left: 36px;
-    margin-top: 16px;
     margin-bottom: 16px;
   }
 `;
 
-const ContentWrapper2 = styled(ContentWrapper)`
-  padding-left: 96px;
+const ContentWrapper2 = styled.div`
   width: 50%;
-  padding-right: 12px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    margin-top: 12px;
+  }
+
   @media screen and (max-width: 768px) {
-    max-width: 320px;
+    width: 320px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: auto;
     padding-left: 36px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 `;
 

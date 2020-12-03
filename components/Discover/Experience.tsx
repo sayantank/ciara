@@ -12,7 +12,7 @@ const Experience: React.FC<ExperienceProps> = ({}) => {
   return (
     <StyledSection>
       <Container>
-        <FancyTitle size="2.4rem" align="center">
+        <FancyTitle size="2.4rem" align="center" padding="12px">
           EXPERIENCE THE GOOD LIFE AT GREENVALE
         </FancyTitle>
         <Divider width="240px" margin="36px" height="4px" />

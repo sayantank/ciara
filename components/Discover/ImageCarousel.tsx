@@ -14,7 +14,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({}) => {
   return (
     <StyledSection>
       <MainContainer>
-        <FancyTitle size="2.4rem" align="center">
+        <FancyTitle size="2.4rem" align="center" padding="12px">
           EXPERIENCE THE GOOD LIFE AT GREENVALE
         </FancyTitle>
         <Divider width="240px" margin="36px" height="4px" />
@@ -115,7 +115,7 @@ const MainContainer = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  width: 900px;
+  width: 60%;
   height: auto;
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -181,7 +181,7 @@ const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 720px;
+  width: 50%;
   z-index: 20;
   padding-right: 12px;
   margin-top: -32px;

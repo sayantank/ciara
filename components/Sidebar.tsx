@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { GrClose } from "react-icons/gr";
+import { BiPhone } from "react-icons/bi";
+import { FiMapPin } from "react-icons/fi";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -47,9 +49,53 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
           </Link>
         </li>
       </MenuList>
+      <DetailWrapper>
+        <IconWrapper className="top">
+          <a href="https://www.google.com/maps/place/65+Brendan+Rd,+Greenvale+VIC+3059,+Australia/@-37.631605,144.8879693,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad650c470983a3b:0x2da6393016f723e1!8m2!3d-37.631605!4d144.890158">
+            <FiMapPin />
+            <p>Sales</p>
+          </a>
+        </IconWrapper>
+        <IconWrapper>
+          <a href="tel:1300-009-0000">
+            <BiPhone />
+            <p>1300-009-0000</p>
+          </a>
+        </IconWrapper>
+      </DetailWrapper>
     </Wrapper>
   );
 };
+
+const DetailWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 24px;
+  .top {
+    border-top: 3px solid #002951;
+    padding-top: 24px;
+  }
+`;
+
+const IconWrapper = styled.div`
+  width: 100%;
+  font-size: 2rem;
+  padding-top: 10px;
+  a {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    color: ${({ theme }) => theme.colors.blue};
+    p {
+      font-size: 1rem;
+      margin-left: 8px;
+      font-weight: 600;
+    }
+  }
+`;
 
 const Wrapper = styled.div<{ isOpen: boolean }>`
   height: 100%;

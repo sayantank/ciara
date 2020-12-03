@@ -64,6 +64,13 @@ const ContentWrapper = styled.div`
     padding-left: 36px;
     margin-bottom: -48px;
   }
+
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    width: 70%;
+    padding-top: 0px;
+    padding-left: 36px;
+    margin-bottom: -48px;
+  }
 `;
 
 const TextWrapper = styled.div`

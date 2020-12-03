@@ -6,6 +6,9 @@ import Navbar from "../components/Navbar";
 import Head from "next/head";
 import "./_app.css";
 
+const desc =
+  "Ciara Heights is a truly mesmerizing boutique estate situated close to the cascading Greenvale Reservoir Park. The canvas of this premium land in Greenvale has been both, painted by Mother Nature and crafted by our experts. Presenting to you the opportunity of enhancing your life, Ciara Heights is all set to cater to your every need. Experiences for enriched living await you here.";
+
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Ellen-Luff";
@@ -53,6 +56,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <div>
       <Head>
         <title>Ciara Heights</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charSet="utf-8" />
+        <meta name="description" content={desc} />
+        <meta property="og:title" content="Ciara Heights" key="ogtitle" />
+        <meta property="og:description" content={desc} key="ogdesc" />
       </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>

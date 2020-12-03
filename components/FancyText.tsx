@@ -20,8 +20,10 @@ const FancyText = styled.p<{ color?: string; align?: string }>`
     color ? theme.colors[color] : theme.colors.blue};
   text-align: ${({ align }) => (align ? align : "left")};
   font-family: "Poppins", sans-serif;
+  line-height: 2rem;
   @media screen and (max-width: 768px) {
     font-size: 0.9rem;
+    line-height: 1.5rem;
   }
 `;
 

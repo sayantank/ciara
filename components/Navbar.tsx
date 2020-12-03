@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import NavLink from "./NavLink";
 import { BiMenuAltRight, BiPhone } from "react-icons/bi";
+import { FiMapPin } from "react-icons/fi";
 import Link from "next/link";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
@@ -15,13 +16,31 @@ const Navbar: React.FC<NavbarProps> = ({ curr }) => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => (document.body.style.overflow = "unset");
+  }, [isOpen]);
   return (
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Overlay isOpen={isOpen} onClick={toggle} />
       <Container>
+        <IconWrapper>
+          <a href="tel:1300-009-0000">
+            <BiPhone />
+          </a>
+          <a
+            className="map"
+            href="https://www.google.com/maps/place/65+Brendan+Rd,+Greenvale+VIC+3059,+Australia/@-37.631605,144.8879693,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad650c470983a3b:0x2da6393016f723e1!8m2!3d-37.631605!4d144.890158"
+          >
+            <FiMapPin />
+          </a>
+        </IconWrapper>
         <Wrapper>
-          <Link href="/contact">
+          <Link href="tel:1300-009-0000">
             <MobileIcon>
               <BiPhone />
             </MobileIcon>
@@ -60,6 +79,42 @@ const Navbar: React.FC<NavbarProps> = ({ curr }) => {
   );
 };
 
+const IconWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: ${({ theme }) => theme.colors.gold};
+  font-size: 2rem;
+  margin-left: 24px;
+
+  max-width: 200px;
+
+  a {
+    color: ${({ theme }) => theme.colors.gold};
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .map {
+    font-size: 1.8rem;
+    margin-left: 18px;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 1.6rem;
+    .map {
+      font-size: 1.4rem;
+      margin-left: 18px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
 const Container = styled.div`
   width: 100%;
   position: fixed;
@@ -73,7 +128,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.ul`
-  max-width: 80%;
+  max-width: 60%;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -81,7 +136,11 @@ const Wrapper = styled.ul`
   justify-content: space-between;
 
   @media screen and (max-width: 768px) {
-    width: 90%;
+    max-width: 90%;
+  }
+
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    max-width: 80%;
   }
 `;
 
@@ -90,6 +149,9 @@ const ImageWrapper = styled.div`
   width: auto;
   @media screen and (max-width: 768px) {
     height: 44px;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 1024px) {
+    max-width: 10px;
   }
 `;
 

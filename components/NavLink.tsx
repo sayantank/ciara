@@ -23,7 +23,7 @@ const Container = styled.li`
   padding: 8px;
   display: flex;
   flex-direction: column;
-
+  margin-top: 6px;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -39,6 +39,10 @@ const StyledLink = styled.a`
 
   &:hover {
     color: ${({ theme }) => theme.colors.gold};
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 0.9rem;
   }
 `;
 

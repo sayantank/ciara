@@ -8,9 +8,6 @@ import Document, {
 import React from "react";
 import { ServerStyleSheet } from "styled-components";
 
-const desc =
-  "Ciara Heights is a truly mesmerizing boutique estate situated close to the cascading Greenvale Reservoir Park. The canvas of this premium land in Greenvale has been both, painted by Mother Nature and crafted by our experts. Presenting to you the opportunity of enhancing your life, Ciara Heights is all set to cater to your every need. Experiences for enriched living await you here.";
-
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
@@ -41,16 +38,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-          <meta charSet="utf-8" />
-          <meta name="description" content={desc} />
-          <meta property="og:title" content="Ciara Heights" key="ogtitle" />
-          <meta property="og:description" content={desc} key="ogdesc" />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

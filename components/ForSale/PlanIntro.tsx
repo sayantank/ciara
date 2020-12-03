@@ -3,11 +3,12 @@ import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { SubmitBtn } from "../Buttons";
 import { Divider } from "../Divider";
-import FancyTitle from "../FancyTitle";
+import FancyTitle, { SubHeader } from "../FancyTitle";
 import StyledSection from "../StyledSection";
 import axios from "axios";
+import FancyText from "../FancyText";
 
-interface ContactFormProps {}
+interface PlanIntroProps {}
 
 type ContactInputs = {
   name: string;
@@ -17,7 +18,7 @@ type ContactInputs = {
   message?: string;
 };
 
-const ContactForm: React.FC<ContactFormProps> = ({}) => {
+const PlanIntro: React.FC<PlanIntroProps> = ({}) => {
   const { register, handleSubmit, errors } = useForm<ContactInputs>();
   const validatePhoneNo = (value) => {
     if (isNaN(value) || value.trim().length !== 10) {
@@ -63,8 +64,20 @@ const ContactForm: React.FC<ContactFormProps> = ({}) => {
   };
   return (
     <StyledSection>
+      <IntroContainer>
+        <Wrapper>
+          <SubHeader align="center">
+            REGISTER YOUR INTEREST FOR THE UPCOMING ESTATE
+          </SubHeader>
+          <Divider height="4px" width="96px" margin="36px" />
+          <FancyText align="center">
+            Please note the masterplan is based on initial drawing. The
+            dimensions are subjected to change.
+          </FancyText>
+        </Wrapper>
+      </IntroContainer>
       <Container>
-        <FancyTitle>REQUEST A CALLBACK</FancyTitle>
+        <FancyTitle>TAKE THE NEXT STEP</FancyTitle>
         <Divider width="240px" margin="36px" height="4px" />
         <Form onSubmit={handleSubmit(onSubmit)} id="contact-form">
           <div className="left">
@@ -128,6 +141,20 @@ const ContactForm: React.FC<ContactFormProps> = ({}) => {
     </StyledSection>
   );
 };
+
+const IntroContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Wrapper = styled.div`
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 54px;
+`;
 
 const Container = styled.div`
   width: 100%;
@@ -237,16 +264,4 @@ const ErrorMsg = styled.p<{ msg: string }>`
     props.msg === "" || props.msg === undefined ? "none" : "block"};
 `;
 
-// const NumberWrapper = styled.div`
-//   width: 100%;
-//   display: flex;
-//   align-items: center;
-
-//   h1 {
-//     font-size: 1.4rem;
-//     color: ${({ theme }) => theme.colors.gold};
-//     margin-right: 12px;
-//   }
-// `;
-
-export default ContactForm;
+export default PlanIntro;

@@ -39,16 +39,15 @@ const VideoButtonContainer = styled.div`
   width: 70%;
   margin: 0 auto;
   position: absolute;
-  bottom: 0;
+  bottom: 48px;
   background: rgba(0, 41, 81, 0.75);
   border-radius: 10px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
   display: flex;
   align-items: center;
 
   @media screen and (max-width: 768px) {
     width: 90%;
+    bottom: 24px;
   }
 `;
 

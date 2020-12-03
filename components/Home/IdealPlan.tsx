@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { GoldenButton } from "../Buttons";
 import FancyText from "../FancyText";
-import FancyTitle from "../FancyTitle";
+import FancyTitle, { SubHeader } from "../FancyTitle";
 import ResponsiveContainer from "../ResponsiveContainer";
 import StyledSection from "../StyledSection";
 import Slide from "react-reveal/Slide";
@@ -13,12 +13,17 @@ interface IdealPlanProps {}
 const IdealPlan: React.FC<IdealPlanProps> = ({}) => {
   return (
     <StyledSection bg="gray">
-      <ResponsiveContainer>
+      <Container>
         <ContentWrapper>
           <Slide left>
-            <div>
-              <FancyTitle>SCENICALLY SITUATED, IDEALLY PLANNED</FancyTitle>
+            <Wrapper>
+              <FancyTitle>
+                SCENICALLY SITUATED,
+                <br />
+                IDEALLY PLANNED
+              </FancyTitle>
               <TextWrapper>
+                <SubHeader>ONE LOCATION TO FULFIL INFINITE DESIRES</SubHeader>
                 <HiddenText>
                   A hub with quality and convenient marketplaces, educational
                   institutions, medical centres, transportation facilities and
@@ -28,7 +33,7 @@ const IdealPlan: React.FC<IdealPlanProps> = ({}) => {
               <ButtonWrapper>
                 <GoldenButton>MASTER PLAN</GoldenButton>
               </ButtonWrapper>
-            </div>
+            </Wrapper>
           </Slide>
         </ContentWrapper>
         <ContentWrapper>
@@ -42,7 +47,7 @@ const IdealPlan: React.FC<IdealPlanProps> = ({}) => {
             </TextWrapper2>
           </Slide>
         </ContentWrapper>
-      </ResponsiveContainer>
+      </Container>
       <ResponsiveContainer>
         <Fade>
           <ImageWrapper>
@@ -58,20 +63,47 @@ const IdealPlan: React.FC<IdealPlanProps> = ({}) => {
   );
 };
 
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
   align-items: center;
+
+  .react-reveal {
+    width: 100%;
+  }
   @media screen and (max-width: 768px) {
-    width: 80%;
+    width: 90%;
     padding-left: 36px;
   }
 `;
 
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
 const TextWrapper = styled.div`
-  max-width: 320px;
+  max-width: 90%;
   margin: 24px 0px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const HiddenText = styled(FancyText)`
