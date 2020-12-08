@@ -17,7 +17,7 @@ const Container = styled.div<{ reverse: boolean }>`
   height: auto;
   width: 100%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: ${({ reverse }) => (reverse ? "column-reverse" : "column")};
   }
 `;

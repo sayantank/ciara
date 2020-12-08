@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "google-map-react": "^2.1.9",
     "next": "latest",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
@@ -16,6 +17,7 @@
     "react-icons": "^3.11.0",
     "react-is": "^16.8.0",
     "react-player": "^2.7.0",
+    "react-responsive-carousel": "^3.2.11",
     "react-reveal": "^1.2.2",
     "styled-components": "^5.0.0"
   },

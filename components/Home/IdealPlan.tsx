@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { GoldenButton } from "../Buttons";
 import FancyText from "../FancyText";
 import FancyTitle, { SubHeader } from "../FancyTitle";
-import ResponsiveContainer from "../ResponsiveContainer";
 import StyledSection from "../StyledSection";
 import Slide from "react-reveal/Slide";
-import Fade from "react-reveal/Fade";
+import Link from "next/link";
+import HomeCarousel from "./HomeCarousel";
+import { Divider } from "../Divider";
 
 interface IdealPlanProps {}
 
@@ -22,6 +23,7 @@ const IdealPlan: React.FC<IdealPlanProps> = ({}) => {
                 <br />
                 IDEALLY PLANNED
               </FancyTitle>
+              <Divider width="48px" height="6px" />
               <TextWrapper>
                 <SubHeader>ONE LOCATION TO FULFIL INFINITE DESIRES</SubHeader>
                 <HiddenText>
@@ -31,7 +33,9 @@ const IdealPlan: React.FC<IdealPlanProps> = ({}) => {
                 </HiddenText>
               </TextWrapper>
               <ButtonWrapper>
-                <GoldenButton>MASTER PLAN</GoldenButton>
+                <Link href="/forsale">
+                  <GoldenButton>MASTER PLAN {">"}</GoldenButton>
+                </Link>
               </ButtonWrapper>
             </Wrapper>
           </Slide>
@@ -39,7 +43,7 @@ const IdealPlan: React.FC<IdealPlanProps> = ({}) => {
         <ContentWrapper>
           <Slide right>
             <TextWrapper2>
-              <FancyText align="center">
+              <FancyText>
                 A hub with quality and convenient marketplaces, educational
                 institutions, medical centres, transportation facilities and
                 reservoirs, Ciara Heights is positioned for perfection.
@@ -48,17 +52,7 @@ const IdealPlan: React.FC<IdealPlanProps> = ({}) => {
           </Slide>
         </ContentWrapper>
       </Container>
-      <ResponsiveContainer>
-        <Fade>
-          <ImageWrapper>
-            <img
-              src="/images/land.jpg"
-              alt="land"
-              style={{ maxWidth: "100%", height: "auto" }}
-            />
-          </ImageWrapper>
-        </Fade>
-      </ResponsiveContainer>
+      <HomeCarousel />
     </StyledSection>
   );
 };
@@ -67,7 +61,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -82,7 +76,7 @@ const ContentWrapper = styled.div`
   .react-reveal {
     width: 100%;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 90%;
     padding-left: 36px;
   }
@@ -92,7 +86,7 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 `;
@@ -101,14 +95,14 @@ const TextWrapper = styled.div`
   max-width: 90%;
   margin: 24px 0px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 `;
 
 const HiddenText = styled(FancyText)`
   display: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: block;
     margin-top: 12px;
   }
@@ -121,21 +115,16 @@ const TextWrapper2 = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 16px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
 
 const ButtonWrapper = styled.div`
   width: 300px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 200px;
   }
-`;
-
-const ImageWrapper = styled.div`
-  width: 100%;
-  margin-top: 54px;
 `;
 
 export default IdealPlan;

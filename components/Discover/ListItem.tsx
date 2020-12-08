@@ -23,7 +23,7 @@ const Container = styled.li`
     color: ${({ theme }) => theme.colors.blue};
     font-weight: 500;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       font-size: 0.9rem;
     }
   }

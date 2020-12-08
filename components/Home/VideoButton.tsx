@@ -27,7 +27,7 @@ const Container = styled.div`
   align-items: center;
   flex-wrap: wrap;
   cursor: pointer;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     margin-bottom: 18px;
     width: 50%;
   }
@@ -37,7 +37,7 @@ const ImageWrapper = styled.div`
   height: 64px;
   width: auto;
   margin-bottom: 24px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     height: 36px;
     margin-bottom: 12px;
   }
@@ -47,7 +47,7 @@ const Text = styled.p`
   color: ${({ theme }) => theme.colors.gold};
   font-weight: 600;
   font-size: 1.2rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     font-size: 0.8rem;
   }
 `;

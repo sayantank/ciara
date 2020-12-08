@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import ReactPlayer from "react-player";
 import styled from "styled-components";
@@ -17,9 +18,33 @@ const Player: React.FC<PlayerProps> = ({ height }) => {
       />
       <VideoButtonContainer>
         <VideoButtonWrapper>
-          <VideoButton image="architect.png" text="LAND FOR SALE" />
+          <Link href="forsale" passHref>
+            <a>
+              <ImageWrapper>
+                <img
+                  src={`/images/architect.png`}
+                  style={{ height: "100%", width: "auto" }}
+                  alt="Land for Sale"
+                />
+              </ImageWrapper>
+              <Text>LAND FOR SALE</Text>
+            </a>
+          </Link>
           <VideoButton image="file.png" text="VIEW BROCHURE" />
-          <VideoButton image="menu.png" text="MASTER PLAN" />
+          <a
+            href="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607423136/ciara/Ciara-Heights-Master-Plan.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ImageWrapper>
+              <img
+                src={`/images/menu.png`}
+                style={{ height: "100%", width: "auto" }}
+                alt="Brochure"
+              />
+            </ImageWrapper>
+            <Text>MASTER PLAN</Text>
+          </a>
           <VideoButton image="play-button.png" text="PLAY VIDEO" />
         </VideoButtonWrapper>
       </VideoButtonContainer>
@@ -60,8 +85,39 @@ const VideoButtonWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    text-decoration: none;
+    cursor: pointer;
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 18px;
+      width: 50%;
+    }
+  }
   @media screen and (max-width: 768px) {
     padding: 24px 0px 12px;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  height: 64px;
+  width: auto;
+  margin-bottom: 24px;
+  @media screen and (max-width: 1024px) {
+    height: 36px;
+    margin-bottom: 12px;
+  }
+`;
+
+const Text = styled.p`
+  color: ${({ theme }) => theme.colors.gold};
+  font-weight: 600;
+  font-size: 1.2rem;
+  @media screen and (max-width: 1024px) {
+    font-size: 0.8rem;
   }
 `;
 

@@ -15,17 +15,20 @@ const discover: React.FC<discoverProps> = ({}) => {
   return (
     <>
       <Register />
-      <HeroImage src="/images/land.jpg" alt="land" />
+      <HeroImage
+        src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607424306/ciara/images/Banner_Discover.jpg"
+        alt="Discover"
+      />
       <Fade>
         <Experience />
       </Fade>
       <Fade>
         <ImageComponent src="/images/land.jpg" alt="land" />
       </Fade>
-      <ImageCarousel />
       <Fade>
         <Amenities />
       </Fade>
+      <ImageCarousel />
       <Footer />
     </>
   );

@@ -12,7 +12,7 @@ export const GoldenButton = styled.button<{
   width: ${({ width }) => (width ? width : "100%")};
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  padding: 12px 18px;
+  padding: 8px 24px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -24,7 +24,25 @@ export const GoldenButton = styled.button<{
     transform: scale(1.03);
   }
 
-  @media screen and (max-width: 768px) {
+  &:focus {
+    outline-width: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.blue};
+    transition: all 0.2s ease-in-out;
+    border-radius: 50px;
+    &:hover {
+      color: white;
+    }
+
+    &:focus {
+      outline-width: 0;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
     font-size: 0.8rem;
     padding: 8px 12px;
   }
@@ -46,6 +64,7 @@ export const SubmitBtn = styled.button<{
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  border-radius: 50px;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.blue};
@@ -57,7 +76,7 @@ export const SubmitBtn = styled.button<{
     outline-width: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     font-size: 1rem;
     padding: 10px 12px;
   }
@@ -79,7 +98,9 @@ export const SubmitBtn2 = styled.button<{
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  margin-top: 12px;
+  margin-top: 60px;
+  border-radius: 50px;
+
   &:hover {
     transform: scale(1.03);
   }
@@ -88,7 +109,7 @@ export const SubmitBtn2 = styled.button<{
     outline-width: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     font-size: 1rem;
     padding: 10px 12px;
   }

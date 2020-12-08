@@ -24,7 +24,7 @@ const Container = styled.li`
   display: flex;
   flex-direction: column;
   margin-top: 6px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
@@ -41,8 +41,8 @@ const StyledLink = styled.a`
     color: ${({ theme }) => theme.colors.gold};
   }
 
-  @media screen and (max-width: 1024px) {
-    font-size: 0.9rem;
+  @media screen and (max-width: 1200px) {
+    font-size: 0.8rem;
   }
 `;
 

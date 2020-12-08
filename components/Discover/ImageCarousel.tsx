@@ -4,7 +4,7 @@ import StyledSection from "../StyledSection";
 import makeCarousel from "react-reveal/makeCarousel";
 import Slide from "react-reveal/Slide";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
-import FancyTitle, { SubHeader } from "../FancyTitle";
+import { SubHeader } from "../FancyTitle";
 import { Divider } from "../Divider";
 import ListItem from "./ListItem";
 
@@ -14,17 +14,13 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({}) => {
   return (
     <StyledSection>
       <MainContainer>
-        <FancyTitle size="2.4rem" align="center" padding="12px">
-          EXPERIENCE THE GOOD LIFE AT GREENVALE
-        </FancyTitle>
-        <Divider width="240px" margin="36px" height="4px" />
         <div style={{ width: "100%", marginTop: "12px" }}>
           <Carousel>
             <Slide right>
               <Wrapper>
                 <ImageWrapper>
                   <img
-                    src="/images/land.jpg"
+                    src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607425337/ciara/images/Discover_Slider_2.jpg"
                     style={{ width: "100%", height: "auto" }}
                   />
                 </ImageWrapper>
@@ -46,19 +42,19 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({}) => {
               <Wrapper>
                 <ImageWrapper>
                   <img
-                    src="/images/land.jpg"
+                    src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607425335/ciara/images/Discover_Slider_1.jpg"
                     style={{ width: "100%", height: "auto" }}
                   />
                 </ImageWrapper>
                 <TextWrapper>
-                  <SubHeader>LIFESTYLE</SubHeader>
+                  <SubHeader>EDUCATION</SubHeader>
                   <Divider width="48px" margin="12px" height="2px" />
                   <ul>
-                    <ListItem>Greenvale Reservoir Park</ListItem>
-                    <ListItem>Broadies Creek and Lake</ListItem>
-                    <ListItem>Woodland Historic Park</ListItem>
-                    <ListItem>Greenvale Recreation Reserve</ListItem>
-                    <ListItem>Napoli Park</ListItem>
+                    <ListItem>Greenvale Primary School</ListItem>
+                    <ListItem>Aitken College</ListItem>
+                    <ListItem>St. Carlo Borromeo Primary School</ListItem>
+                    <ListItem>Greenvale Secondary </ListItem>
+                    <ListItem>Roxburg Primary School & College</ListItem>
                   </ul>
                 </TextWrapper>
               </Wrapper>
@@ -67,19 +63,58 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({}) => {
               <Wrapper>
                 <ImageWrapper>
                   <img
-                    src="/images/land.jpg"
+                    src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607425339/ciara/images/Discover_Slider_3.jpg"
                     style={{ width: "100%", height: "auto" }}
                   />
                 </ImageWrapper>
                 <TextWrapper>
-                  <SubHeader>LIFESTYLE</SubHeader>
+                  <SubHeader>MEDICAL</SubHeader>
                   <Divider width="48px" margin="12px" height="2px" />
                   <ul>
-                    <ListItem>Greenvale Reservoir Park</ListItem>
-                    <ListItem>Broadies Creek and Lake</ListItem>
-                    <ListItem>Woodland Historic Park</ListItem>
-                    <ListItem>Greenvale Recreation Reserve</ListItem>
-                    <ListItem>Napoli Park</ListItem>
+                    <ListItem>Greenvale Medical Centre</ListItem>
+                    <ListItem>Barrymore Medical Centre</ListItem>
+                    <ListItem>Roxburgh Park Superclinic</ListItem>
+                  </ul>
+                </TextWrapper>
+              </Wrapper>
+            </Slide>
+            <Slide right>
+              <Wrapper>
+                <ImageWrapper>
+                  <img
+                    src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607425342/ciara/images/Discover_Slider_4.jpg"
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </ImageWrapper>
+                <TextWrapper>
+                  <SubHeader>SHOPPING</SubHeader>
+                  <Divider width="48px" margin="12px" height="2px" />
+                  <ul>
+                    <ListItem>Greenvale Shopping Centre</ListItem>
+                    <ListItem>Roxburg Village</ListItem>
+                    <ListItem>Meadow Heights Shopping Centre</ListItem>
+                    <ListItem>Gladstone Shopping Centre</ListItem>
+                    <ListItem>DFO</ListItem>
+                  </ul>
+                </TextWrapper>
+              </Wrapper>
+            </Slide>
+            <Slide right>
+              <Wrapper>
+                <ImageWrapper>
+                  <img
+                    src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607425345/ciara/images/Discover_Slider_5.jpg"
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </ImageWrapper>
+                <TextWrapper>
+                  <SubHeader>TRANSPORT</SubHeader>
+                  <Divider width="48px" margin="12px" height="2px" />
+                  <ul>
+                    <ListItem>Bus Stop at Thornley Ct</ListItem>
+                    <ListItem>Roxburg Train Station</ListItem>
+                    <ListItem>Broadmeadows Train Station</ListItem>
+                    <ListItem>Tullamarine Airport</ListItem>
                   </ul>
                 </TextWrapper>
               </Wrapper>
@@ -117,7 +152,7 @@ const MainContainer = styled.div`
 const ImageWrapper = styled.div`
   width: 60%;
   height: auto;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 `;
@@ -129,7 +164,7 @@ const Container = styled.div`
   width: 100%;
   height: 450px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
     height: 540px;
   }
@@ -146,7 +181,7 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
   }
 `;
@@ -165,7 +200,7 @@ const TextWrapper = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
     height: auto;
     padding: 18px;
@@ -185,7 +220,7 @@ const ButtonWrapper = styled.div`
   z-index: 20;
   padding-right: 12px;
   margin-top: -32px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 80%;
     margin: 0;
   }

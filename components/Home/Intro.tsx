@@ -36,7 +36,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 70%;
   }
 `;
@@ -48,7 +48,7 @@ const H1 = styled.h1`
   font-weight: 800;
   letter-spacing: 4px;
   text-align: center;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     font-size: 1.2rem;
   }
 `;
@@ -56,7 +56,7 @@ const H1 = styled.h1`
 const TextWrapper = styled.div`
   width: 60%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
 

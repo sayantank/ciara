@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { GoldenButton } from "../Buttons";
 import { Divider } from "../Divider";
 import FancyText from "../FancyText";
 import FancyTitle, { SubHeader } from "../FancyTitle";
@@ -15,7 +14,7 @@ const Experience: React.FC<ExperienceProps> = ({}) => {
         <FancyTitle size="2.4rem" align="center" padding="12px">
           EXPERIENCE THE GOOD LIFE AT GREENVALE
         </FancyTitle>
-        <Divider width="240px" margin="36px" height="4px" />
+        <Divider width="120px" margin="36px" height="6px" />
         <SubHeader>LOCATION</SubHeader>
         <TextWrapper>
           <FancyText align="center">
@@ -28,11 +27,6 @@ const Experience: React.FC<ExperienceProps> = ({}) => {
             ease.{" "}
           </FancyText>
         </TextWrapper>
-        <ButtonWrapper>
-          <GoldenButton>GOOGLE MAPS</GoldenButton>
-          <GoldenButton>GOOGLE MAPS</GoldenButton>
-          <GoldenButton>GOOGLE MAPS</GoldenButton>
-        </ButtonWrapper>
       </Container>
     </StyledSection>
   );
@@ -50,23 +44,26 @@ const TextWrapper = styled.div`
   text-align: center;
 `;
 
-const ButtonWrapper = styled.div`
-  min-width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 36px 0px;
-  button {
-    width: 30%;
-  }
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    min-height: 160px;
-    margin: 24px 0px;
-    button {
-      width: 100%;
-    }
-  }
-`;
+// const ButtonWrapper = styled.div`
+//   min-width: 80%;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin: 36px 0px;
+//   a {
+//     width: 30%;
+//     @media screen and (max-width: 1024px) {
+//       width: 70%;
+//     }
+//   }
+//   @media screen and (max-width: 1024px) {
+//     flex-direction: column;
+//     min-height: 160px;
+//     margin: 24px 0px;
+//     button {
+//       width: 100%;
+//     }
+//   }
+// `;
 
 export default Experience;

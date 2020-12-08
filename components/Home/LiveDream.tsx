@@ -18,7 +18,7 @@ const LiveDream: React.FC<LiveDreamProps> = ({}) => {
         <ResponsiveContainer reverse={true}>
           <ContentWrapper>
             <FancyTitle color="blue">LIVE YOUR DREAM</FancyTitle>
-            <Divider width="30%" />
+            <Divider width="48px" height="6px" />
             <TextWrapper>
               <FancyText color="blue">
                 A chance to discover the finest land ranging from 350m2 to
@@ -28,13 +28,13 @@ const LiveDream: React.FC<LiveDreamProps> = ({}) => {
             </TextWrapper>
             <ButtonWrapper>
               <Link href="/forsale">
-                <GoldenButton size="1.2rem">LAND FOR SALE</GoldenButton>
+                <GoldenButton size="1.2rem">LAND FOR SALE {">"}</GoldenButton>
               </Link>
             </ButtonWrapper>
           </ContentWrapper>
           <ImageWrapper>
             <img
-              src="/images/house1.jpg"
+              src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607424375/ciara/images/Home_2.jpg"
               alt="house1"
               style={{ width: "100%", height: "auto" }}
             />
@@ -51,7 +51,7 @@ const ImageWrapper = styled.div`
   border: solid 6px white;
   align-self: flex-end;
   z-index: 5;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
     margin-top: 0;
     border: none;
@@ -65,18 +65,18 @@ const ContentWrapper = styled.div`
   min-height: 360px;
   padding-right: 54px;
   padding-bottom: 48px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 80%;
     padding-top: 48px;
     padding-left: 36px;
   }
 
-  @media screen and (max-width: 1024px) and (min-width: 768px) {
+  /* @media screen and (max-width: 1024px) and (min-width: 768px) {
     width: 50%;
     padding-top: 0px;
     padding-right: 36px;
     margin-bottom: -48px;
-  }
+  } */
 `;
 
 const TextWrapper = styled.div`
@@ -86,7 +86,7 @@ const TextWrapper = styled.div`
 
 const ButtonWrapper = styled.div`
   width: 300px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 200px;
   }
 `;

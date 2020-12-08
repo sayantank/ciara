@@ -69,7 +69,7 @@ const PlanIntro: React.FC<PlanIntroProps> = ({}) => {
           <SubHeader align="center">
             REGISTER YOUR INTEREST FOR THE UPCOMING ESTATE
           </SubHeader>
-          <Divider height="4px" width="96px" margin="36px" />
+          <Divider width="120px" margin="36px" height="6px" />
           <FancyText align="center">
             Please note the masterplan is based on initial drawing. The
             dimensions are subjected to change.
@@ -80,62 +80,57 @@ const PlanIntro: React.FC<PlanIntroProps> = ({}) => {
         <FancyTitle>TAKE THE NEXT STEP</FancyTitle>
         <Divider width="240px" margin="36px" height="4px" />
         <Form onSubmit={handleSubmit(onSubmit)} id="contact-form">
-          <div className="left">
-            <Label>
-              Full Name
-              <Input
-                name="name"
-                type="text"
-                ref={register({ required: "This field is required" })}
-              />
-              <ErrorMsg msg={errors.name?.message}>
-                {errors.name?.message}
-              </ErrorMsg>
-            </Label>
-            <Label>
-              Email
-              <Input
-                name="email"
-                type="email"
-                ref={register({ required: "This field is required" })}
-              />
-              <ErrorMsg msg={errors.email?.message}>
-                {errors.email?.message}
-              </ErrorMsg>
-            </Label>
-            <Label>
-              Mobile Number
-              <Input
-                name="contact"
-                type="tel"
-                ref={register({
-                  required: "This field is required",
-                  validate: (value) =>
-                    validatePhoneNo(value) || "Invalid Mobile Number",
-                })}
-              />
-              <ErrorMsg msg={errors.contact?.message}>
-                {errors.contact?.message}
-              </ErrorMsg>
-            </Label>
-            <Label>
-              When do you plan to buy?
-              <select name="plan" ref={register}>
-                <option value="immediately">Immediately</option>
-                <option value="months_3_to_6">3-6 Months</option>
-                <option value="months_6_to_12">6-12 Months</option>
-                <option value="year_1">1 year</option>
-              </select>
-            </Label>
-          </div>
-          <div className="right">
-            <Label>
-              Your Message
-              <TextArea form="contact-form" ref={register} name="message" />
-            </Label>
+          <Wrapper2>
+            <div className="left">
+              <Label>
+                Full Name
+                <Input
+                  name="name"
+                  type="text"
+                  ref={register({ required: "This field is required" })}
+                />
+                <ErrorMsg msg={errors.name?.message}>
+                  {errors.name?.message}
+                </ErrorMsg>
+              </Label>
+              <Label>
+                Email
+                <Input
+                  name="email"
+                  type="email"
+                  ref={register({ required: "This field is required" })}
+                />
+                <ErrorMsg msg={errors.email?.message}>
+                  {errors.email?.message}
+                </ErrorMsg>
+              </Label>
+              <Label>
+                Mobile Number
+                <Input
+                  name="contact"
+                  type="tel"
+                  ref={register({
+                    required: "This field is required",
+                    validate: (value) =>
+                      validatePhoneNo(value) || "Invalid Mobile Number",
+                  })}
+                />
+                <ErrorMsg msg={errors.contact?.message}>
+                  {errors.contact?.message}
+                </ErrorMsg>
+              </Label>
+            </div>
+            <div className="right">
+              <Label>
+                Your Message
+                <TextArea form="contact-form" ref={register} name="message" />
+              </Label>
+            </div>
+          </Wrapper2>
+          <ButtonWrapper>
             <SubmitBtn type="submit">{submitText}</SubmitBtn>
             {errorMsg && <Label style={{ color: "red" }}>{errorMsg}</Label>}
-          </div>
+          </ButtonWrapper>
         </Form>
       </Container>
     </StyledSection>
@@ -146,6 +141,13 @@ const IntroContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const ButtonWrapper = styled.div`
+  width: 50%;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -165,29 +167,38 @@ const Container = styled.div`
 
 const Form = styled.form`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 80%;
   .left {
     flex: 1;
-    padding: 12px;
+    padding: 0px;
   }
   .right {
     flex: 1;
     padding: 12px 36px;
+    padding-right: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
     .left {
       padding: 0;
     }
     .right {
       padding: 0;
+      padding-right: 0;
     }
   }
+`;
 
-  @media screen and (max-width: 1024px) and (min-width: 768px) {
-    width: 100%;
+const Wrapper2 = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
   }
 `;
 
@@ -213,7 +224,7 @@ const Label = styled.label`
     &:focus {
       outline-width: 0;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       padding: 6px 8px;
     }
   }
@@ -223,7 +234,7 @@ const Input = styled.input`
   font-size: 1.2rem;
   border: solid 3px;
   border-color: ${({ theme }) => theme.colors.gold};
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 12px 16px;
   margin: 8px 0px;
   color: ${({ theme }) => theme.colors.blue};
@@ -233,7 +244,7 @@ const Input = styled.input`
     outline-width: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     padding: 6px 8px;
   }
 `;
@@ -243,6 +254,7 @@ const TextArea = styled.textarea`
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   border: solid 3px;
+  border-radius: 10px;
   border-color: ${({ theme }) => theme.colors.gold};
   padding: 8px 14px;
   margin: 8px 0px;

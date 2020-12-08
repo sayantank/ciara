@@ -34,6 +34,8 @@ const Navbar: React.FC<NavbarProps> = ({ curr }) => {
           </a>
           <a
             className="map"
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://www.google.com/maps/place/65+Brendan+Rd,+Greenvale+VIC+3059,+Australia/@-37.631605,144.8879693,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad650c470983a3b:0x2da6393016f723e1!8m2!3d-37.631605!4d144.890158"
           >
             <FiMapPin />
@@ -57,11 +59,21 @@ const Navbar: React.FC<NavbarProps> = ({ curr }) => {
             active={curr === "/builders"}
           />
           <ImageWrapper>
-            <img
-              src="/images/clara-full.png"
-              style={{ height: "100%", width: "auto", alignSelf: "center" }}
-              alt="Clara Heights"
-            />
+            <Link href="/" passHref>
+              <a>
+                <img
+                  src="/images/ciara-land-new.png"
+                  style={{
+                    height: "110%",
+                    width: "auto",
+                    alignSelf: "center",
+                    marginTop: "-3px",
+                    padding: "4px 0px",
+                  }}
+                  alt="Clara Heights"
+                />
+              </a>
+            </Link>
           </ImageWrapper>
           <NavLink to="HOME" href="/" active={curr === "/"} />
           <NavLink to="ABOUT" href="/about" active={curr === "/about"} />
@@ -110,7 +122,7 @@ const IconWrapper = styled.div`
       margin-left: 18px;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
@@ -122,7 +134,7 @@ const Container = styled.div`
   height: 84px;
   z-index: 100;
   box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.3);
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     height: 64px;
   }
 `;
@@ -135,7 +147,7 @@ const Wrapper = styled.ul`
   align-items: center;
   justify-content: space-between;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     max-width: 90%;
   }
 
@@ -147,7 +159,9 @@ const Wrapper = styled.ul`
 const ImageWrapper = styled.div`
   height: 64px;
   width: auto;
-  @media screen and (max-width: 768px) {
+  img {
+  }
+  @media screen and (max-width: 1024px) {
     height: 44px;
   }
   @media screen and (max-width: 1024px) and (min-width: 1024px) {
@@ -158,7 +172,7 @@ const ImageWrapper = styled.div`
 const MobileIcon = styled.div`
   display: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: flex;
     justify-self: flex-end;
     top: 0;

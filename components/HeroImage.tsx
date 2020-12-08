@@ -16,10 +16,10 @@ const HeroImage: React.FC<HeroImageProps> = ({ src, alt }) => {
 
 const HeroWrapper = styled.div`
   width: 100%;
-  max-height: 840px;
+  max-height: 600px;
   overflow-y: hidden;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     height: 50vh;
     overflow-x: hidden;
   }
@@ -29,7 +29,7 @@ const HeroImg = styled.img`
   height: auto;
   width: 100%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: auto;
     height: 100%;
   }

@@ -8,7 +8,10 @@ interface contactProps {}
 const contact: React.FC<contactProps> = ({}) => {
   return (
     <>
-      <HeroImage src="/images/land.jpg" alt="land" />
+      <HeroImage
+        src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607425220/ciara/images/Banner_Contact.png"
+        alt="Contact Us"
+      />
       <ContactForm />
       <Footer />
     </>

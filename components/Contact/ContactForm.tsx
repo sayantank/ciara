@@ -13,7 +13,7 @@ type ContactInputs = {
   name: string;
   email: string;
   contact: string;
-  plan: string;
+  // plan: string;
   message?: string;
 };
 
@@ -36,7 +36,7 @@ const ContactForm: React.FC<ContactFormProps> = ({}) => {
         name: data.name.trim(),
         email: data.email.trim(),
         contact: data.contact.trim(),
-        plan: data.plan.trim(),
+        // plan: data.plan.trim(),
         message: data.message.trim(),
       })
       .then((res) => {
@@ -65,47 +65,48 @@ const ContactForm: React.FC<ContactFormProps> = ({}) => {
     <StyledSection>
       <Container>
         <FancyTitle>REQUEST A CALLBACK</FancyTitle>
-        <Divider width="240px" margin="36px" height="4px" />
+        <Divider width="120px" margin="36px" height="6px" />
         <Form onSubmit={handleSubmit(onSubmit)} id="contact-form">
-          <div className="left">
-            <Label>
-              Full Name
-              <Input
-                name="name"
-                type="text"
-                ref={register({ required: "This field is required" })}
-              />
-              <ErrorMsg msg={errors.name?.message}>
-                {errors.name?.message}
-              </ErrorMsg>
-            </Label>
-            <Label>
-              Email
-              <Input
-                name="email"
-                type="email"
-                ref={register({ required: "This field is required" })}
-              />
-              <ErrorMsg msg={errors.email?.message}>
-                {errors.email?.message}
-              </ErrorMsg>
-            </Label>
-            <Label>
-              Mobile Number
-              <Input
-                name="contact"
-                type="tel"
-                ref={register({
-                  required: "This field is required",
-                  validate: (value) =>
-                    validatePhoneNo(value) || "Invalid Mobile Number",
-                })}
-              />
-              <ErrorMsg msg={errors.contact?.message}>
-                {errors.contact?.message}
-              </ErrorMsg>
-            </Label>
-            <Label>
+          <Wrapper>
+            <div className="left">
+              <Label>
+                Full Name
+                <Input
+                  name="name"
+                  type="text"
+                  ref={register({ required: "This field is required" })}
+                />
+                <ErrorMsg msg={errors.name?.message}>
+                  {errors.name?.message}
+                </ErrorMsg>
+              </Label>
+              <Label>
+                Email
+                <Input
+                  name="email"
+                  type="email"
+                  ref={register({ required: "This field is required" })}
+                />
+                <ErrorMsg msg={errors.email?.message}>
+                  {errors.email?.message}
+                </ErrorMsg>
+              </Label>
+              <Label>
+                Mobile Number
+                <Input
+                  name="contact"
+                  type="tel"
+                  ref={register({
+                    required: "This field is required",
+                    validate: (value) =>
+                      validatePhoneNo(value) || "Invalid Mobile Number",
+                  })}
+                />
+                <ErrorMsg msg={errors.contact?.message}>
+                  {errors.contact?.message}
+                </ErrorMsg>
+              </Label>
+              {/* <Label>
               When do you plan to buy?
               <select name="plan" ref={register}>
                 <option value="immediately">Immediately</option>
@@ -113,16 +114,19 @@ const ContactForm: React.FC<ContactFormProps> = ({}) => {
                 <option value="months_6_to_12">6-12 Months</option>
                 <option value="year_1">1 year</option>
               </select>
-            </Label>
-          </div>
-          <div className="right">
-            <Label>
-              Your Message
-              <TextArea form="contact-form" ref={register} name="message" />
-            </Label>
+            </Label> */}
+            </div>
+            <div className="right">
+              <Label>
+                Your Message
+                <TextArea form="contact-form" ref={register} name="message" />
+              </Label>
+            </div>
+          </Wrapper>
+          <ButtonWrapper>
             <SubmitBtn type="submit">{submitText}</SubmitBtn>
             {errorMsg && <Label style={{ color: "red" }}>{errorMsg}</Label>}
-          </div>
+          </ButtonWrapper>
         </Form>
       </Container>
     </StyledSection>
@@ -136,9 +140,27 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Form = styled.form`
+const Wrapper = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
+`;
+
+const ButtonWrapper = styled.div`
+  width: 50%;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 80%;
   .left {
     flex: 1;
@@ -149,7 +171,7 @@ const Form = styled.form`
     padding: 12px 36px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
     .left {
       padding: 0;
@@ -157,10 +179,6 @@ const Form = styled.form`
     .right {
       padding: 0;
     }
-  }
-
-  @media screen and (max-width: 1024px) and (min-width: 768px) {
-    width: 100%;
   }
 `;
 
@@ -186,7 +204,7 @@ const Label = styled.label`
     &:focus {
       outline-width: 0;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       padding: 6px 8px;
     }
   }
@@ -196,7 +214,7 @@ const Input = styled.input`
   font-size: 1.2rem;
   border: solid 3px;
   border-color: ${({ theme }) => theme.colors.gold};
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 12px 16px;
   margin: 8px 0px;
   color: ${({ theme }) => theme.colors.blue};
@@ -206,7 +224,7 @@ const Input = styled.input`
     outline-width: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     padding: 6px 8px;
   }
 `;
@@ -216,6 +234,7 @@ const TextArea = styled.textarea`
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   border: solid 3px;
+  border-radius: 10px;
   border-color: ${({ theme }) => theme.colors.gold};
   padding: 8px 14px;
   margin: 8px 0px;

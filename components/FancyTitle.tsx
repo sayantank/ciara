@@ -39,7 +39,7 @@ const H1 = styled.h1<{
   letter-spacing: 2px;
   margin: ${({ padding }) => (padding ? `0px ${padding}` : "0px")};
   text-align: ${({ align }) => (align ? align : "left")};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     font-size: 1.4rem;
   }
 `;
@@ -50,7 +50,7 @@ export const SubHeader = styled.h2<{ align?: string }>`
   letter-spacing: 2px;
   color: ${({ theme }) => theme.colors.blue};
   text-align: ${({ align }) => (align ? align : "left")};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     font-size: 1.1rem;
   }
 `;

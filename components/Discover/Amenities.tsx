@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Divider } from "../Divider";
 import FancyText from "../FancyText";
-import { SubHeader } from "../FancyTitle";
+import FancyTitle, { SubHeader } from "../FancyTitle";
 import StyledSection from "../StyledSection";
 
 interface AmenitiesProps {}
@@ -11,8 +11,13 @@ const Amenities: React.FC<AmenitiesProps> = ({}) => {
   return (
     <StyledSection>
       <Container>
-        <SubHeader>AMENITIES</SubHeader>
-        <Divider height="2px" width="54px" />
+        <FancyTitle size="2.4rem" align="center" padding="12px">
+          END THE QUEST FOR QUALITY LIVING
+        </FancyTitle>
+        <Divider width="120px" margin="36px" height="6px" />
+
+        <SubHeader>AMENITIES AND LIFESTYLE</SubHeader>
+        <div className="gap" style={{ height: "36px" }} />
         <TextWrapper>
           <FancyText align="center">
             Ciara Heights curates for you a community living experience like

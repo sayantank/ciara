@@ -33,7 +33,7 @@ const Container = styled.div`
   align-items: center;
   padding: 12px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     min-height: 280px;
   }
 `;

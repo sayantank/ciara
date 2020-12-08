@@ -12,7 +12,7 @@ const AboutUs: React.FC<AboutUsProps> = ({}) => {
     <StyledSection>
       <Container>
         <FancyTitle>ABOUT US</FancyTitle>
-        <Divider width="240px" margin="36px" height="4px" />
+        <Divider width="120px" margin="36px" height="6px" />
         <TextWrapper>
           <FancyText align="center">
             Ciara Heights is a truly mesmerizing boutique estate situated close
@@ -55,7 +55,7 @@ const Container = styled.div`
 const TextWrapper = styled.div`
   width: 80%;
   margin-top: 8px;
-  /* @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 1024px) {
     width: 95%;
   } */
 `;

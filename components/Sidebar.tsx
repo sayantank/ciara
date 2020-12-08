@@ -18,6 +18,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
       </CloseIcon>
       <MenuList>
         <li>
+          <Link href="/" passHref>
+            <StyledLink onClick={toggle}>HOME</StyledLink>
+          </Link>
+        </li>
+        <li>
           <Link href="/discover" passHref>
             <StyledLink onClick={toggle}>DISCOVER</StyledLink>
           </Link>
@@ -32,7 +37,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
             <StyledLink onClick={toggle}>BUILDERS</StyledLink>
           </Link>
         </li>
-        <div style={{ height: "48px" }} />
         <li>
           <Link href="/about" passHref>
             <StyledLink onClick={toggle}>ABOUT</StyledLink>
@@ -41,11 +45,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
         <li>
           <Link href="/contact" passHref>
             <StyledLink onClick={toggle}>CONTACT US</StyledLink>
-          </Link>
-        </li>
-        <li>
-          <Link href="/" passHref>
-            <StyledLink onClick={toggle}>HOME</StyledLink>
           </Link>
         </li>
       </MenuList>
@@ -71,9 +70,10 @@ const DetailWrapper = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   padding-bottom: 24px;
+  margin-top: 36px;
   .top {
     border-top: 3px solid #002951;
     padding-top: 24px;

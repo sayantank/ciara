@@ -11,7 +11,10 @@ const about: React.FC<aboutProps> = ({}) => {
   return (
     <>
       <Register />
-      <HeroImage src="/images/land.jpg" alt="land" />
+      <HeroImage
+        src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607446777/ciara/images/Banner_About.jpg"
+        alt="About Us"
+      />
       <AboutUs />
       <Developer />
       <Footer />

@@ -11,7 +11,7 @@ type ContactInputs = {
   name: string;
   email: string;
   contact: string;
-  plan: string;
+  // plan: string;
   message: string;
 };
 
@@ -49,7 +49,7 @@ const Register: React.FC<RegisterProps> = ({}) => {
         name: data.name.trim(),
         email: data.email.trim(),
         contact: data.contact.trim(),
-        plan: data.plan.trim(),
+        // plan: data.plan.trim(),
         message: data.message.trim(),
       })
       .then((res) => {
@@ -134,7 +134,7 @@ const Register: React.FC<RegisterProps> = ({}) => {
                   </ErrorMsg>
                 </Label>
 
-                <Label>
+                {/* <Label>
                   When do you plan on buying?
                   <select name="plan" ref={register}>
                     <option value="immediately">Immediately</option>
@@ -142,7 +142,7 @@ const Register: React.FC<RegisterProps> = ({}) => {
                     <option value="months_6_12">6 to 12 Months</option>
                     <option value="year_1">1 year</option>
                   </select>
-                </Label>
+                </Label> */}
                 <Label>
                   Your Message
                   <Input ref={register} name="message" type="text" />
@@ -175,7 +175,7 @@ const ImageWrapper = styled.div`
   text-align: center;
   margin: 12px 0;
   margin-top: -30px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     height: 48px;
   }
 `;
@@ -195,13 +195,12 @@ const Reveal = styled.div`
   box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   z-index: 500;
-
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-
+  border-radius: 50px;
+  margin-right: 12px;
   transition: all 0.2s ease-in-out;
-  @media screen and (max-width: 768px) {
-    font-size: 1rem;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 0.9rem;
   }
 
   &:hover {
@@ -245,7 +244,7 @@ const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.colors.gold};
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     min-width: 95vw;
   }
 `;
@@ -257,8 +256,8 @@ const Header = styled.h1`
   font-size: 2.2rem;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.gold};
-
-  @media screen and (max-width: 768px) {
+  margin: 24px 0px;
+  @media screen and (max-width: 1024px) {
     font-size: 1.3rem;
   }
 `;
@@ -314,7 +313,7 @@ const Label = styled.label`
     option {
       background-color: rgba(0, 41, 81, 1);
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       padding: 6px 8px;
     }
   }
@@ -330,12 +329,12 @@ const Input = styled.input`
   font-weight: 500;
   width: 100%;
   background-color: transparent;
-  border-radius: 5px;
+  border-radius: 10px;
   &:focus {
     outline-width: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     padding: 6px 8px;
   }
 `;
@@ -348,36 +347,5 @@ const ErrorMsg = styled.p<{ msg: string }>`
   display: ${(props) =>
     props.msg === "" || props.msg === undefined ? "none" : "block"};
 `;
-
-// const TextArea = styled.textarea`
-//   font-size: 1.2rem;
-//   font-family: "Poppins", sans-serif;
-//   font-weight: 500;
-//   border: solid 3px;
-//   border-color: ${({ theme }) => theme.colors.gold};
-//   color: ${({ theme }) => theme.colors.gold};
-//   padding: 8px 14px;
-//   margin: 8px 0px;
-//   resize: none;
-//   width: 100%;
-//   height: 160px;
-//   background-color: rgba(0, 41, 81, 1);
-
-//   &:focus {
-//     outline-width: 0;
-//   }
-// `;
-
-// const NumberWrapper = styled.div`
-//   width: 100%;
-//   display: flex;
-//   align-items: center;
-
-//   h1 {
-//     font-size: 1.4rem;
-//     color: ${({ theme }) => theme.colors.gold};
-//     margin-right: 12px;
-//   }
-// `;
 
 export default Register;
