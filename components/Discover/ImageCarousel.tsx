@@ -26,7 +26,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({}) => {
                 </ImageWrapper>
 
                 <TextWrapper>
-                  <SubHeader>LIFESTYLE</SubHeader>
+                  <SubHeader>DISCOVERY</SubHeader>
                   <Divider width="48px" margin="12px" height="2px" />
                   <ul>
                     <ListItem>Greenvale Reservoir Park</ListItem>

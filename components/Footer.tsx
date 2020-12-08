@@ -89,7 +89,14 @@ const Footer: React.FC<FooterProps> = ({}) => {
         <p>
           &#169; Copright 2020. Ciara Heights Pty. Ltd.
           <br />
-          Site by LandLaunch
+          Site by{" "}
+          <a
+            href="https://landlaunch.com.au"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LandLaunch
+          </a>
         </p>
       </FooterContainer>
     </>
@@ -119,6 +126,11 @@ const FooterContainer = styled.div`
     font-size: 1rem;
     text-align: center;
     line-height: 1.3rem;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
 
     @media screen and (max-width: 1024px) {
       font-size: 0.8rem;

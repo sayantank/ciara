@@ -52,7 +52,15 @@ const IdealPlan: React.FC<IdealPlanProps> = ({}) => {
           </Slide>
         </ContentWrapper>
       </Container>
-      <HomeCarousel />
+      <div
+        style={{
+          margin: "24px 0px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <HomeCarousel />
+      </div>
     </StyledSection>
   );
 };

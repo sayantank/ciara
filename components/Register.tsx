@@ -196,7 +196,7 @@ const Reveal = styled.div`
   cursor: pointer;
   z-index: 500;
   border-radius: 50px;
-  margin-right: 12px;
+  margin-right: 28px;
   transition: all 0.2s ease-in-out;
 
   @media screen and (max-width: 1024px) {

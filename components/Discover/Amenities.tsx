@@ -16,7 +16,7 @@ const Amenities: React.FC<AmenitiesProps> = ({}) => {
         </FancyTitle>
         <Divider width="120px" margin="36px" height="6px" />
 
-        <SubHeader>AMENITIES AND LIFESTYLE</SubHeader>
+        <SubHeader>AMENITIES & LIFESTYLE</SubHeader>
         <div className="gap" style={{ height: "36px" }} />
         <TextWrapper>
           <FancyText align="center">

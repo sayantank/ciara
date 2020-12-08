@@ -98,7 +98,7 @@ export const SubmitBtn2 = styled.button<{
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  margin-top: 60px;
+  margin-top: 48px;
   border-radius: 50px;
 
   &:hover {

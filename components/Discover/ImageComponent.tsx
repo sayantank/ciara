@@ -10,7 +10,7 @@ interface ImageComponentProps {
 
 const ImageComponent: React.FC<ImageComponentProps> = () => {
   return (
-    <StyledSection>
+    <StyledSection margin="-24px">
       <ImageWrapper>
         <img
           src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607445882/ciara/images/Discover_Map.jpg"
