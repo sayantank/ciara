@@ -34,7 +34,7 @@ const LiveDream: React.FC<LiveDreamProps> = ({}) => {
           </ContentWrapper>
           <ImageWrapper>
             <img
-              src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607424375/ciara/images/Home_2.jpg"
+              src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607503262/ciara/images/Home_2_gqtqcu.jpg"
               alt="house1"
               style={{ width: "100%", height: "auto" }}
             />
