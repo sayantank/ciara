@@ -52,7 +52,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 100%;
   justify-content: center;
   margin: 0 auto;
   @media screen and (max-width: 1024px) {
