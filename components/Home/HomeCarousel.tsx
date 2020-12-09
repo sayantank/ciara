@@ -12,7 +12,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({}) => {
         <Wrapper>
           <img
             src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607425352/ciara/images/Home_Slider_1.jpg"
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: "100%" }}
           />
           <Overlay />
           <p>Gellibrand Hill Summit</p>
@@ -20,7 +20,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({}) => {
         <Wrapper>
           <img
             src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607425355/ciara/images/Home_Slider_2.jpg"
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: "100%" }}
           />
           <Overlay />
           <p>Greenvale Reservoir Park</p>
@@ -28,7 +28,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({}) => {
         <Wrapper>
           <img
             src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607446356/ciara/images/Home_Slider_3.jpg"
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: "100%" }}
           />
           <Overlay />
           <p>Woodlands Historic Park</p>
@@ -36,7 +36,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({}) => {
         <Wrapper>
           <img
             src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607446323/ciara/images/Home_Slider_4.jpg"
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: "100%" }}
           />
           <Overlay />
           <p>Aitken College</p>
@@ -44,7 +44,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({}) => {
         <Wrapper>
           <img
             src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607446360/ciara/images/Home_Slider_5.jpg"
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: "100%" }}
           />
           <Overlay />
           <p>Closest Bus Stop To Brendan Road</p>
