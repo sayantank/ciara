@@ -336,6 +336,7 @@ const Input = styled.input`
 
   @media screen and (max-width: 1024px) {
     padding: 6px 8px;
+    margin: 8px 0px 0px 0px;
   }
 `;
 

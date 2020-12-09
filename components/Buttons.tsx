@@ -112,5 +112,6 @@ export const SubmitBtn2 = styled.button<{
   @media screen and (max-width: 1024px) {
     font-size: 1rem;
     padding: 10px 12px;
+    margin-top: 24px;
   }
 `;

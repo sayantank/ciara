@@ -27,9 +27,7 @@ const Interest: React.FC<InterestProps> = ({}) => {
         <ContentWrapper>
           <Wrapper>
             <FancyText>
-              A step to satisfy your quest for the lifestyle
-              <br />
-              you deserve begins now.
+              A step to satisfy your quest for the lifestyle you deserve begins now.
             </FancyText>
             <ButtonWrapper>
               <Link href="/contact">
