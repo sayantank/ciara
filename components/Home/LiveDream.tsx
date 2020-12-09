@@ -21,8 +21,8 @@ const LiveDream: React.FC<LiveDreamProps> = ({}) => {
             <Divider width="48px" height="6px" />
             <TextWrapper>
               <FancyText color="blue">
-                A chance to discover the finest land ranging from 350m2 to
-                448m2, where families rejoice in the lifestyle they always
+                A chance to discover the finest land ranging from 310m<sup>2</sup> to
+                580m<sup>2</sup>, where families rejoice in the lifestyle they always
                 sought.
               </FancyText>
             </TextWrapper>
@@ -34,7 +34,7 @@ const LiveDream: React.FC<LiveDreamProps> = ({}) => {
           </ContentWrapper>
           <ImageWrapper>
             <img
-              src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607424375/ciara/images/Home_2.jpg"
+              src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607503262/ciara/images/Home_2_gqtqcu.jpg"
               alt="house1"
               style={{ width: "100%", height: "auto" }}
             />

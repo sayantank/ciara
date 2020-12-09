@@ -27,9 +27,7 @@ const Interest: React.FC<InterestProps> = ({}) => {
         <ContentWrapper>
           <Wrapper>
             <FancyText>
-              A step to satisfy your quest for the lifestyle
-              <br />
-              you deserve begins now.
+              A step to satisfy your quest for the lifestyle you deserve begins now.
             </FancyText>
             <ButtonWrapper>
               <Link href="/contact">
@@ -52,7 +50,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 100%;
   justify-content: center;
   margin: 0 auto;
   @media screen and (max-width: 1024px) {
