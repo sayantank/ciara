@@ -174,9 +174,11 @@ const ImageWrapper = styled.div`
   width: auto;
   text-align: center;
   margin: 12px 0;
-  margin-top: -40px;
+  margin-top: -30px;
   @media screen and (max-width: 1024px) {
-    height: 44px;
+    height: 40px;
+    margin: 8px 0;
+    margin-top: -40px;
   }
 `;
 
@@ -256,9 +258,10 @@ const Header = styled.h1`
   font-size: 2.2rem;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.gold};
-  margin: 12px 0px;
+  margin: 18px 0px;
   @media screen and (max-width: 1024px) {
     font-size: 1.2rem;
+    margin: 12px 0px;
   }
 `;
 
