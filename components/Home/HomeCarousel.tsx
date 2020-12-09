@@ -56,22 +56,22 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({}) => {
 
 const MainContainer = styled.div`
   margin-top: 36px;
-  width: 80%;
-  max-height: 640px;
+  width: 100%;
+  max-height: 720px;
   overflow: hidden;
   /* display: flex;
   justify-content: center; */
   .carousel-root {
-    max-height: 640px;
+    max-height: 720px;
   }
   .carousel {
-    max-height: 640px;
+    max-height: 720px;
   }
   .slider-wrapper {
-    max-height: 640px;
+    max-height: 720px;
   }
   .slider {
-    max-height: 640px;
+    max-height: 720px;
   }
 
   .legend {
@@ -79,7 +79,7 @@ const MainContainer = styled.div`
   }
 
   .slide {
-    max-height: 640px;
+    max-height: 720px;
   }
 
   /* .carousel .control-arrow,
