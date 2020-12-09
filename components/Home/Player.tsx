@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import ReactPlayer from "react-player";
 import styled from "styled-components";
 import VideoButton from "./VideoButton";
 
@@ -11,11 +10,17 @@ interface PlayerProps {
 const Player: React.FC<PlayerProps> = ({ height }) => {
   return (
     <Container height={height}>
-      <ReactPlayer
+      {/* <ReactPlayer
         url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
         height="100%"
         width="100%"
-      />
+      /> */}
+      <video loop autoPlay muted>
+        <source
+          src="https://res.cloudinary.com/nxmxnjxxn/video/upload/v1607454998/ciara/Ciara-Heights-Video.mp4"
+          type="video/mp4"
+        />
+      </video>
       <VideoButtonContainer>
         <VideoButtonWrapper>
           <Link href="forsale" passHref>
@@ -58,6 +63,12 @@ const Container = styled.div<{ height: string }>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: hidden;
+
+  video {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const VideoButtonContainer = styled.div`

@@ -33,7 +33,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
           </Link>
         </li>
         <li>
-          <Link href="/builders" passHref>
+          <Link href="/forsale" passHref>
             <StyledLink onClick={toggle}>BUILDERS</StyledLink>
           </Link>
         </li>

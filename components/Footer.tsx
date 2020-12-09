@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 interface FooterProps {}
 
@@ -85,6 +86,24 @@ const Footer: React.FC<FooterProps> = ({}) => {
           </ContentWrapper> */}
         </Column>
       </Container>
+      <SocialContainer>
+        <div className="wrapper">
+          <a
+            href="https://www.instagram.com/ciaraheightsgreenvale/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IG />
+          </a>
+          <a
+            href="https://www.facebook.com/ciaraheightsgreenvale/?ref=py_c"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FB />
+          </a>
+        </div>
+      </SocialContainer>
       <FooterContainer>
         <p>
           &#169; Copright 2020. Ciara Heights Pty. Ltd.
@@ -112,9 +131,40 @@ const Img = styled.img`
   }
 `;
 
+const IG = styled(FaInstagram)`
+  height: 100%;
+  width: auto;
+  margin: 0px 16px;
+  color: ${({ theme }) => theme.colors.gold};
+`;
+
+const FB = styled(FaFacebook)`
+  height: 100%;
+  width: auto;
+  margin: 0px 16px;
+  color: ${({ theme }) => theme.colors.gold};
+`;
+
+const SocialContainer = styled.div`
+  width: 100%;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: ${({ theme }) => theme.colors.blue};
+
+  .wrapper {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+`;
+
 const FooterContainer = styled.div`
   width: 100%;
-  height: 36px;
+  height: auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -140,7 +190,7 @@ const FooterContainer = styled.div`
 `;
 
 const Container = styled.div`
-  padding: 54px;
+  padding: 36px;
   margin-top: 24px;
   background-color: ${({ theme }) => theme.colors.blue};
   display: flex;

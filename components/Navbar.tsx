@@ -55,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ curr }) => {
           <NavLink to="FOR SALE" href="/forsale" active={curr === "/forsale"} />
           <NavLink
             to="BUILDERS"
-            href="/builders"
+            href="/forsale"
             active={curr === "/builders"}
           />
           <ImageWrapper>

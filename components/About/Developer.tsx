@@ -45,9 +45,9 @@ const Developer: React.FC<DeveloperProps> = ({}) => {
           </Wrapper>
           <ImageWrapper left={false}>
             <img
-              src="/images/gaage.png"
+              src="/images/gaage2.png"
               alt="Gaage Developments"
-              style={{ width: "100%", height: "auto" }}
+              style={{ width: "65%", height: "auto" }}
             />
           </ImageWrapper>
         </ContentWrapper>
