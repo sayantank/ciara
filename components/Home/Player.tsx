@@ -50,7 +50,6 @@ const Player: React.FC<PlayerProps> = ({ height }) => {
             </ImageWrapper>
             <Text>MASTER PLAN</Text>
           </a>
-          <VideoButton image="play-button.png" text="PLAY VIDEO" />
         </VideoButtonWrapper>
       </VideoButtonContainer>
     </Container>
@@ -68,6 +67,10 @@ const Container = styled.div<{ height: string }>`
   video {
     width: 100%;
     height: auto;
+    @media screen and (max-width: 1024px) {
+      height: 100%;
+      width: auto;
+    }
   }
 `;
 
@@ -95,6 +98,7 @@ const VideoButtonWrapper = styled.div`
   width: 75%;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
 
   a {
     display: flex;
@@ -106,10 +110,12 @@ const VideoButtonWrapper = styled.div`
     @media screen and (max-width: 1024px) {
       margin-bottom: 18px;
       width: 50%;
+      justify-content: center;
     }
   }
   @media screen and (max-width: 768px) {
     padding: 24px 0px 12px;
+    justify-content: center;
   }
 `;
 

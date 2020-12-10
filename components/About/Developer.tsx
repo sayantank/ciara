@@ -15,6 +15,13 @@ const Developer: React.FC<DeveloperProps> = ({}) => {
           <Wrapper left={true}>
             <FancyTitle>DEVELOPER</FancyTitle>
             <Divider height="4px" margin="36px" width="180px" />
+            <ImageWrapper2 left={false}>
+              <img
+                src="/images/gaage2.png"
+                alt="Gaage Developments"
+                style={{ width: "65%", height: "auto" }}
+              />
+            </ImageWrapper2>
             <ButtonWrapper>
               <a
                 href="https://www.gaage.info/"
@@ -62,6 +69,13 @@ const Developer: React.FC<DeveloperProps> = ({}) => {
           <Wrapper left={false}>
             <FancyTitle>MARKETING AND SELLING AGENT</FancyTitle>
             <Divider height="4px" margin="36px" width="180px" />
+            <ImageWrapper2 left={false}>
+              <img
+                src="/images/landlaunch2.png"
+                alt="Gaage Developments"
+                style={{ width: "65%", height: "auto" }}
+              />
+            </ImageWrapper2>
             <ButtonWrapper>
               <a
                 href="https://landlaunch.com.au"
@@ -198,6 +212,20 @@ const ImageWrapper = styled.div<{ left: boolean }>`
   @media screen and (max-width: 1024px) {
     width: 100%;
     padding: 0;
+    display: none;
+  }
+`;
+const ImageWrapper2 = styled.div<{ left: boolean }>`
+  width: 40%;
+  margin-bottom: 24px;
+  padding-right: ${({ left }) => (left ? "36px" : "0px")};
+  padding-left: ${({ left }) => (left ? "0px" : "36px")};
+  text-align: center;
+  display: none;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    padding: 0;
+    display: block;
   }
 `;
 
