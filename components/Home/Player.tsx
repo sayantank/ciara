@@ -15,7 +15,7 @@ const Player: React.FC<PlayerProps> = ({ height }) => {
         height="100%"
         width="100%"
       /> */}
-      <video loop autoPlay muted>
+      <video loop autoPlay muted playsInline>
         <source
           src="https://res.cloudinary.com/nxmxnjxxn/video/upload/v1607454998/ciara/Ciara-Heights-Video.mp4"
           type="video/mp4"
@@ -35,7 +35,7 @@ const Player: React.FC<PlayerProps> = ({ height }) => {
               <Text>LAND FOR SALE</Text>
             </a>
           </Link>
-          <VideoButton image="file.png" text="VIEW BROCHURE" />
+          {/* <VideoButton image="file.png" text="VIEW BROCHURE" /> */}
           <a
             href="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607423136/ciara/Ciara-Heights-Master-Plan.pdf"
             target="_blank"
@@ -50,7 +50,7 @@ const Player: React.FC<PlayerProps> = ({ height }) => {
             </ImageWrapper>
             <Text>MASTER PLAN</Text>
           </a>
-          <VideoButton image="play-button.png" text="PLAY VIDEO" />
+          {/* <VideoButton image="play-button.png" text="PLAY VIDEO" /> */}
         </VideoButtonWrapper>
       </VideoButtonContainer>
     </Container>
@@ -72,7 +72,7 @@ const Container = styled.div<{ height: string }>`
 `;
 
 const VideoButtonContainer = styled.div`
-  width: 70%;
+  width: 40%;
   margin: 0 auto;
   position: absolute;
   bottom: 48px;
@@ -82,7 +82,7 @@ const VideoButtonContainer = styled.div`
   align-items: center;
 
   @media screen and (max-width: 768px) {
-    width: 90%;
+    width: 80%;
     bottom: 24px;
   }
 `;

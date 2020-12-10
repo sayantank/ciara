@@ -18,13 +18,26 @@ const Footer: React.FC<FooterProps> = ({}) => {
           <ContentWrapper>
             <Title>CIARA OFFICE</Title>
             <TextBlock>
-              <Text>107, Elm Park Drive, Hoppers Crossing VIC 3029</Text>
+                <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.google.com/maps/place/107+Elm+Park+Dr,+Hoppers+Crossing+VIC+3029,+Australia/@-37.8720718,144.7188024,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad688e84c155197:0x65f075a705e6ab12!8m2!3d-37.8720761!4d144.7209964"
+              >
+                <Text>107, Elm Park Drive, Hoppers Crossing VIC 3029</Text>
+              </a>
             </TextBlock>
           </ContentWrapper>
           <ContentWrapper>
             <Title>LOCATION</Title>
             <TextBlock>
-              <Text>65, Brendan Rd, Greenvale VIC 3059</Text>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.google.com/maps/place/65+Brendan+Rd,+Greenvale+VIC+3059,+Australia/@-37.6316007,144.887964,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad650c470983a3b:0x2da6393016f723e1!8m2!3d-37.631605!4d144.890158"
+              >
+                <Text>65, Brendan Rd, Greenvale VIC 3059</Text>
+              </a>
+              
             </TextBlock>
           </ContentWrapper>
         </Column>
