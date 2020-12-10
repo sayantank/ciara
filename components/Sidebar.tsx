@@ -52,13 +52,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
         <IconWrapper className="top">
           <a href="https://www.google.com/maps/place/65+Brendan+Rd,+Greenvale+VIC+3059,+Australia/@-37.631605,144.8879693,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad650c470983a3b:0x2da6393016f723e1!8m2!3d-37.631605!4d144.890158">
             <FiMapPin />
-            <p>Sales</p>
+            <p>Locate Us</p>
           </a>
         </IconWrapper>
         <IconWrapper>
-          <a href="tel:1300-009-0000">
+          <a href="tel:+61412931984">
             <BiPhone />
-            <p>1300-009-0000</p>
+            <p>+61 412-931-984</p>
           </a>
         </IconWrapper>
       </DetailWrapper>

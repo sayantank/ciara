@@ -29,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ curr }) => {
       <Overlay isOpen={isOpen} onClick={toggle} />
       <Container>
         <IconWrapper>
-          <a href="tel:1300-009-0000">
+          <a href="tel:+61412931984">
             <BiPhone />
           </a>
           <a
@@ -42,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ curr }) => {
           </a>
         </IconWrapper>
         <Wrapper>
-          <Link href="tel:1300-009-0000">
+          <Link href="tel:+61412931984">
             <MobileIcon>
               <BiPhone />
             </MobileIcon>
