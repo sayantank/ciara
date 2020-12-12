@@ -65,8 +65,8 @@ const Container = styled.div<{ height: string }>`
   overflow-y: hidden;
 
   video {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 110%;
     @media screen and (max-width: 1024px) {
       height: 100%;
       width: auto;
@@ -85,7 +85,7 @@ const VideoButtonContainer = styled.div`
   align-items: center;
 
   @media screen and (max-width: 768px) {
-    width: 80%;
+    width: 90%;
     bottom: 24px;
   }
 `;

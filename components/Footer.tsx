@@ -48,7 +48,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
               <Text>
                 <b>Jag</b>
               </Text>
-              <Text>Estate Manager</Text>
+              <Text>Sales Consultant</Text>
               <Text>
                 <a href="tel:+61412931984">P. +61 412 931 984</a>
               </Text>

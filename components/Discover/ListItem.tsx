@@ -17,7 +17,7 @@ const Container = styled.li`
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 4px;
+  padding: 2px;
   p {
     font-size: 1.2rem;
     color: ${({ theme }) => theme.colors.blue};

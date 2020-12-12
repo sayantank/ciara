@@ -46,12 +46,13 @@ const LiveDream: React.FC<LiveDreamProps> = ({}) => {
 };
 
 const ImageWrapper = styled.div`
-  margin-top: -20rem;
+  margin-top: -15rem;
   width: 55%;
   border: solid 6px white;
   align-self: flex-end;
   z-index: 5;
-  @media screen and (max-width: 1024px) {
+
+  @media screen and (max-width: 1224px) {
     width: 100%;
     margin-top: 0;
     border: none;

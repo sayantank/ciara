@@ -42,7 +42,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({}) => {
               <Wrapper>
                 <ImageWrapper>
                   <img
-                    src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607425335/ciara/images/Discover_Slider_1.jpg"
+                    src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607446323/ciara/images/Home_Slider_4.jpg"
                     style={{ width: "100%", height: "auto" }}
                   />
                 </ImageWrapper>
@@ -166,7 +166,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
-    height: 540px;
+    height: 580px;
   }
 `;
 
