@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
           <ContentWrapper>
             <Title>CIARA OFFICE</Title>
             <TextBlock>
-                <a
+              <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.google.com/maps/place/107+Elm+Park+Dr,+Hoppers+Crossing+VIC+3029,+Australia/@-37.8720718,144.7188024,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad688e84c155197:0x65f075a705e6ab12!8m2!3d-37.8720761!4d144.7209964"
@@ -37,7 +37,6 @@ const Footer: React.FC<FooterProps> = ({}) => {
               >
                 <Text>65, Brendan Rd, Greenvale VIC 3059</Text>
               </a>
-              
             </TextBlock>
           </ContentWrapper>
         </Column>
@@ -75,9 +74,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
           </ContentWrapper> */}
         </Column>
         <Column style={{ alignItems: "center" }}>
-          <ContentWrapper>
-            <Title>CONTACT</Title>
-
+          <ContentWrapper margin="2rem">
             <TextBlock>
               <Text>
                 <b>Prashansa Prashar</b>
@@ -235,8 +232,13 @@ const ImageWrapper = styled.div`
   align-items: center;
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.div<{ margin?: string }>`
   flex: 1;
+  margin-top: ${({ margin }) => margin};
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 0;
+  }
 `;
 
 const Title = styled.h1`
@@ -253,6 +255,12 @@ const Title = styled.h1`
 
 const TextBlock = styled.div`
   margin: 12px 0px 24px;
+  a {
+    text-decoration: none;
+  }
+  p {
+    text-decoration: none;
+  }
 `;
 
 const Text = styled.p`
