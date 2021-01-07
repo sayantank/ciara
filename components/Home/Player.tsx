@@ -65,8 +65,8 @@ const Container = styled.div<{ height: string }>`
   overflow-y: hidden;
 
   video {
-    width: auto;
-    height: 110%;
+    width: 100%;
+    height: auto;
     @media screen and (max-width: 1024px) {
       height: 100%;
       width: auto;

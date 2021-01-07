@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
                 rel="noopener noreferrer"
                 href="https://www.google.com/maps/place/107+Elm+Park+Dr,+Hoppers+Crossing+VIC+3029,+Australia/@-37.8720718,144.7188024,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad688e84c155197:0x65f075a705e6ab12!8m2!3d-37.8720761!4d144.7209964"
               >
-                <Text>107, Elm Park Drive, Hoppers Crossing VIC 3029</Text>
+                <Text>Level 17, 2 Southbank Blvd, Southbank</Text>
               </a>
             </TextBlock>
           </ContentWrapper>
@@ -42,7 +42,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
         </Column>
         <Column style={{ alignItems: "center" }}>
           <ContentWrapper style={{ alignItems: "center" }}>
-            <Title>CONTACT</Title>
+            <Title>CONTACT INFO</Title>
             <TextBlock>
               <Text>
                 <b>Jag</b>
