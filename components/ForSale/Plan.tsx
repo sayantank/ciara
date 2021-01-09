@@ -8,7 +8,7 @@ const Plan: React.FC<PlanProps> = ({}) => {
     <Section>
       <Container>
         <img
-          src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1607425348/ciara/images/For_Sale_Plan.png"
+          src="https://res.cloudinary.com/nxmxnjxxn/image/upload/v1609816265/ciara/images/Master_Plan.jpg"
           alt="Ciara Height Plan"
           style={{ width: "100%", height: "auto", border: "5px solid #d3c48f" }}
         />

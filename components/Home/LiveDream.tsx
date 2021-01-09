@@ -21,8 +21,8 @@ const LiveDream: React.FC<LiveDreamProps> = ({}) => {
             <Divider width="48px" height="6px" />
             <TextWrapper>
               <FancyText color="blue">
-                A chance to discover the finest land ranging from 310m<sup>2</sup> to
-                580m<sup>2</sup>, where families rejoice in the lifestyle they always
+                A chance to discover the finest land ranging from 310m2 to
+                580m2, where families rejoice in the lifestyle they always
                 sought.
               </FancyText>
             </TextWrapper>
