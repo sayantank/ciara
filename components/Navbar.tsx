@@ -6,6 +6,7 @@ import { FiMapPin } from "react-icons/fi";
 import Link from "next/link";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
+import DropNavLink from "./DropNavLink";
 
 interface NavbarProps {
   curr: string;
@@ -52,7 +53,10 @@ const Navbar: React.FC<NavbarProps> = ({ curr }) => {
             href="/discover"
             active={curr === "/discover"}
           />
-          <NavLink to="FOR SALE" href="/forsale" active={curr === "/forsale"} />
+          <DropNavLink
+            to="FOR SALE"
+            active={curr === "/forsale" || curr === "/land-for-sale"}
+          />
           <NavLink
             to="BUILDERS"
             href="/forsale"

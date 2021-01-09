@@ -28,8 +28,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
           </Link>
         </li>
         <li>
-          <Link href="/forsale" passHref>
-            <StyledLink onClick={toggle}>FOR SALE</StyledLink>
+          <Link href="/land-for-sale" passHref>
+            <StyledLink onClick={toggle}>LAND FOR SALE</StyledLink>
           </Link>
         </li>
         <li>

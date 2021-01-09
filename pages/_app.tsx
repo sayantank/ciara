@@ -1,10 +1,10 @@
-import type { AppProps /*, AppContext */ } from "next/app";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Navbar from "../components/Navbar";
 import Head from "next/head";
 import "./_app.css";
+import { AppProps } from "next/app";
 
 const desc =
   "Ciara Heights is a truly mesmerizing boutique estate situated close to the cascading Greenvale Reservoir Park. The canvas of this premium land in Greenvale has been both, painted by Mother Nature and crafted by our experts. Presenting to you the opportunity of enhancing your life, Ciara Heights is all set to cater to your every need. Experiences for enriched living await you here.";
@@ -70,3 +70,21 @@ export default function App({ Component, pageProps }: AppProps) {
     </div>
   );
 }
+
+// App.getServer = async (appContext: AppContext) => {
+//   // calls page's `getInitialProps` and fills `appProps.pageProps`
+//   const appProps = await App.getInitialProps(appContext);
+
+//   return { ...appProps };
+// };
+
+// App.getInitialProps = async ({ Component, ctx }) => {
+//   const pageProps = Component.getInitialProps
+//     ? await Component.getInitialProps(ctx)
+//     : {};
+//   if (Object.keys(pageProps).length > 0) {
+//     return { pageProps };
+//   } else {
+//     return {};
+//   }
+// };

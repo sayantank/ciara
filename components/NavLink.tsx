@@ -20,10 +20,11 @@ const NavLink: React.FC<NavLinkProps> = ({ to, href, active }) => {
 };
 
 const Container = styled.li`
-  padding: 8px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-top: 6px;
+  height: 100%;
   @media screen and (max-width: 1024px) {
     display: none;
   }
