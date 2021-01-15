@@ -7,16 +7,20 @@ import LotRow from "./LotRow";
 
 import { LotObject } from "./LotRow";
 import Axios from "axios";
+import Skeleton from "react-loading-skeleton";
 
 interface LotListProps {}
 
 const LotList: React.FC<LotListProps> = () => {
+  const [initialLots, setInitialLots] = useState([]);
+  const [showAvailable, setShowAvailable] = useState(false);
   const [lots, setLots] = useState([]);
   const [option, setOption] = useState(0);
 
   useEffect(() => {
     Axios.get("https://api.ciaraheights.com.au/lots").then((res) => {
       const data = res.data;
+      setInitialLots(data);
       setLots(data);
     });
   }, []);
@@ -36,14 +40,28 @@ const LotList: React.FC<LotListProps> = () => {
     return 0;
   };
 
-  useEffect(() => {
-    const sortArray = () => {
-      const sorted = [...lots].sort(compare);
-      setLots(sorted);
-    };
+  const sortArray = () => {
+    const sorted = [...initialLots].sort(compare);
+    setLots(sorted);
+  };
 
+  const filterAvailable = () => {
+    const filtered = [...lots].filter((lot) => lot.status === "Available");
+    setLots(filtered);
+  };
+
+  useEffect(() => {
     sortArray();
   }, [option]);
+
+  useEffect(() => {
+    console.log(showAvailable);
+    if (showAvailable) {
+      filterAvailable();
+    } else {
+      sortArray();
+    }
+  }, [showAvailable]);
 
   return (
     <>
@@ -62,16 +80,46 @@ const LotList: React.FC<LotListProps> = () => {
               <option value={3}>Area (Low-High)</option>
               <option value={4}>Area (High-Low)</option>
             </select>
-            {lots.map((lot, i) => (
-              <LotRow data={lot} key={i} />
-            ))}
+            {lots.length > 0 ? (
+              lots.map((lot, i) => <LotRow data={lot} key={i} />)
+            ) : (
+              <div style={{ width: "100%" }}>
+                <Skeleton height={96} style={{ marginTop: "16px" }} />
+                <Skeleton height={96} style={{ marginTop: "16px" }} />
+                <Skeleton height={96} style={{ marginTop: "16px" }} />
+                <Skeleton height={96} style={{ marginTop: "16px" }} />
+                <Skeleton height={96} style={{ marginTop: "16px" }} />
+                <Skeleton height={96} style={{ marginTop: "16px" }} />
+              </div>
+            )}
+            <FilterBtn onClick={() => setShowAvailable(!showAvailable)}>
+              {showAvailable ? "VIEW ALL LOTS" : "VIEW AVAILABLE LOTS"}
+            </FilterBtn>
           </Wrapper>
           <DownloadWrapper>
             <FancyTitle>ESSENTIAL DOWNLOADS</FancyTitle>
             <ButtonWrapper>
-              <button>Brand Guidelines</button>
-              <button>Brand Guidelines</button>
-              <button>Brand Guidelines</button>
+              <a
+                href="https://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button>Brand Guidelines</button>
+              </a>
+              <a
+                href="https://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button>Brand Guidelines</button>
+              </a>
+              <a
+                href="https://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button>Brand Guidelines</button>
+              </a>
             </ButtonWrapper>
           </DownloadWrapper>
         </Container>
@@ -131,25 +179,56 @@ const ButtonWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    button {
-      width: 100%;
-    }
+    width: 80%;
   }
 
-  button {
-    border: solid 3px #c8ba87;
-    background: ${({ theme }) => theme.colors.darkgold};
-    color: ${({ theme }) => theme.colors.blue};
-    font-size: 1rem;
-    font-weight: 600;
+  a {
     width: 30%;
-    padding: 10px 16px;
-    border-radius: 50px;
-    cursor: pointer;
-
     @media screen and (max-width: 768px) {
       width: 100%;
       margin: 8px 0px;
     }
+  }
+  button {
+    border: none;
+    background: ${({ theme }) => theme.colors.darkgold};
+    color: ${({ theme }) => theme.colors.blue};
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:focus {
+      outline-width: 0;
+    }
+
+    &:hover {
+      background: ${({ theme }) => theme.colors.blue};
+      color: white;
+    }
+  }
+`;
+
+const FilterBtn = styled.button`
+  border: none;
+  width: 100%;
+  border-radius: 50px;
+  padding: 16px 4px;
+  margin: 18px 0px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background: ${({ theme }) => theme.colors.blue};
+
+  &:focus {
+    outline-width: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
   }
 `;

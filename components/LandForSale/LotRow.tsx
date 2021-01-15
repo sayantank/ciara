@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import styled from "styled-components";
+import RegisterForm from "../RegisterForm";
 
 export interface LotObject {
   lot: number;
@@ -19,6 +20,24 @@ interface LotRowProps {
 const LotRow: React.FC<LotRowProps> = ({
   data: { lot, status, size, frontage, depth, facing, image },
 }) => {
+  const [position, setPosition] = useState(false);
+  const [showForm, setShowForm] = useState<boolean>(false);
+
+  const toggle = () => {
+    console.log("hello");
+    setShowForm(!showForm);
+    setTimeout(() => {
+      setPosition(!position);
+    }, 10);
+  };
+
+  useEffect(() => {
+    if (show) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => (document.body.style.overflow = "unset");
+  }, [showForm]);
+
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -28,7 +47,9 @@ const LotRow: React.FC<LotRowProps> = ({
     return () => (document.body.style.overflow = "unset");
   }, [show]);
 
-  return (
+  return showForm ? (
+    <RegisterForm show={showForm} toggle={toggle} position={position} />
+  ) : (
     <>
       <ModalWrapper show={show}>
         <div className="btn-wrapper">
@@ -43,8 +64,10 @@ const LotRow: React.FC<LotRowProps> = ({
             <h2>{status}</h2>
           </div>
           <div className="right">
-            <EnquireBtn>ENQUIRE</EnquireBtn>
-            <ViewLotBtn onClick={() => setShow(true)}>VIEW LOT</ViewLotBtn>
+            <EnquireBtn onClick={toggle}>ENQUIRE</EnquireBtn>
+            <a href={image} target="_blank" rel="noopener noreferrer">
+              <ViewLotBtn>VIEW LOT</ViewLotBtn>
+            </a>
           </div>
         </Upper>
         <Lower>
